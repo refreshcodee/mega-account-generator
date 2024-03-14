@@ -32,7 +32,7 @@ To use Gmail API, you need to configure it in the Google Cloud console. Follow t
 
 1. Replace the `MEGATOOLS` variable in `generate-mega.py` with your Megatools path.
 2. Replace the `MAIL` variable in `generate-mega.py` with your gmail username.
-3. Run `python refresh-token.py` to generate `token.pickle`.
+3. Run `python refresh-token.py` to generate `token.pickle` (Run only once).
 4. Run `python generate-mega.py`.
 
 ### Demo
