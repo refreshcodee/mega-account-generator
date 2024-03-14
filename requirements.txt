@@ -1,0 +1,4 @@
+Faker==24.1.0
+google_api_python_client==2.122.0
+google_auth_oauthlib==1.2.0
+protobuf==5.26.0
