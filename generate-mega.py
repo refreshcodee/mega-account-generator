@@ -123,19 +123,9 @@ def check_email(creds, email):
         return "Nothing found"
     return emails
     
-def store_email_data(data):
-    # Check if file exists (optional)
-    try:
-        with open("accounts.json", "r") as file:
-            existing_data = json.load(file)
-    except FileNotFoundError:
-        existing_data = []  # Create an empty list if file doesn't exist
-
-    existing_data.append(data)  # Append new data to the list
-
-    with open("accounts.json", "w") as file:
-        json.dump(existing_data, file, indent=4)
-
+def store_email_data(email_id, password):
+    with open('accounts.txt', 'a') as txtfile:
+        txtfile.write(f"{email_id}:{password}\n")
 
 def generate_mega_accounts(num):
     
@@ -157,7 +147,7 @@ def generate_mega_accounts(num):
         verification_mail = check_email(creds ,email_data.get('email')) # Get Verification mail
         account = verify_mega(register, verification_mail[0].get('url')) # Verify Mega account
 
-        store_email_data(email_data) # Add account to json file
+        store_email_data(email_id, password) # Add account to json file
 
         print(account)
         
