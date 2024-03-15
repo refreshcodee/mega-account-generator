@@ -5,13 +5,11 @@ import subprocess
 
 def main():
     MEGATOOLS = r"E:\megatools-1.11.1.20230212-win64\megatools.exe"
-    with open('accounts.json', 'r') as file:
-        # Load the contents of the file into a Python object
-        accounts = json.load(file)
+    with open('accounts.txt', 'r') as file:
+        lines = file.readlines()
 
-        for account in accounts:
-            email = account.get('email')
-            password = account.get('password')
+        for line in lines:
+            email, password = line.strip().split(':')
             # login
             login = subprocess.run(
                 [
