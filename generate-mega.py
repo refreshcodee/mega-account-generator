@@ -24,13 +24,13 @@ MAIL = "youremailbefore@sign"
 email_data = {}
 
 log_filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + '_mega.log'
-logging.basicConfig(filename=f"E:\upload-bot\logs\{log_filename}", level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename=log_filename, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Function to load credentials
 def load_credentials():
     try:
         logging.info("Loading Credentials")
-        with open('E:\upload-bot\token.pickle', 'rb') as token_file:
+        with open('token.pickle', 'rb') as token_file:
             credentials_info = pickle.load(token_file)
             client_id = credentials_info['client_id']
             client_secret = credentials_info['client_secret']
@@ -178,7 +178,7 @@ def check_email(creds, email):
 def store_email_data(email_id, password):
     try:
         logging.info("Storing MEGA Account to accounts.txt")
-        with open('E:\upload-bot\accounts.txt', 'a') as txtfile:
+        with open('accounts.txt', 'a') as txtfile:
             txtfile.write(f"{email_id}:{password}\n")
         logging.info("Added MEGA Account to accounts.txt")
     except Exception as e:
