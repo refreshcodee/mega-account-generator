@@ -32,8 +32,9 @@ To use Gmail API, you need to configure it in the Google Cloud console. Follow t
 
 1. Replace the `MEGATOOLS` variable in `generate-mega.py` with your Megatools path.
 2. Replace the `MAIL` variable in `generate-mega.py` with your gmail username.
-3. Run `python refresh-token.py` to generate `token.pickle` (Run only once).
-4. Run `python generate-mega.py`.
+3. Run `python refresh-token.py` to generate `token.pickle` (Run only once and make sure to run on local machine rather than a server).
+4. Copy `token.pickle` to your working folder (Only needed if you plan to run the script on a server, otherwise ignore as it creates the file in the working directory itself).
+5. Run `python generate-mega.py`.
 
 ### Demo
 
